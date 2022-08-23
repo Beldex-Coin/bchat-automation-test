@@ -2,12 +2,15 @@ package io.beldex.bchat.testcases;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.remote.MobileCapabilityType;
+import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.List;
+
 import static java.awt.event.KeyEvent.*;
 
 public class ChatSettingsCase {
@@ -82,10 +85,10 @@ public class ChatSettingsCase {
         Thread.sleep(2000);
         MobileElement NextButton = (MobileElement) driver.findElementById(registerButton);
         NextButton.click();
-        Thread.sleep(4000);
+        Thread.sleep(5000);
 
         //one to one contact creation
-       /* MobileElement Logo = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.ImageView");
+        /*MobileElement Logo = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.ImageView");
         Logo.click();
         Thread.sleep(2000);
         MobileElement NewChat = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.RelativeLayout[1]/android.widget.ImageView");
@@ -110,14 +113,14 @@ public class ChatSettingsCase {
         SendImageView2.click();
         Thread.sleep(40000);
         driver.navigate().back();
-        Thread.sleep(20000);
-*/
-        MobileElement singleModeImageView = (MobileElement) driver.findElementById(SingleModeImageView);
+        Thread.sleep(20000);*/
+
+       /* MobileElement singleModeImageView = (MobileElement) driver.findElementById(SingleModeImageView);
         singleModeImageView.click();
-        Thread.sleep(3000);
-        MobileElement myAccountTextView = (MobileElement) driver.findElementByXPath(MyAccountTextView);
+        Thread.sleep(3000);*/
+       /* MobileElement myAccountTextView = (MobileElement) driver.findElementByXPath(MyAccountTextView);
         myAccountTextView.click();
-        Thread.sleep(6000);
+        Thread.sleep(6000);*/
 
         //Check Enter key sends toggle switch is OFF inside chat settings on my account settings
        /* MobileElement chatsButton = (MobileElement) driver.findElementById(ChatsButton);
@@ -215,9 +218,9 @@ public class ChatSettingsCase {
         MobileElement faqButton = (MobileElement) driver.findElementById("io.beldex.bchat:id/faqButton");
         faqButton.click();
         Thread.sleep(3000);
-        /*MobileElement terms_accept = (MobileElement) driver.findElementById("com.android.chrome:id/terms_accept");
+        MobileElement terms_accept = (MobileElement) driver.findElementById("com.android.chrome:id/terms_accept");
         terms_accept.click();
-        Thread.sleep(3000);*/
+        Thread.sleep(3000);
         driver.navigate().back();
         Thread.sleep(3000);
 
@@ -256,13 +259,74 @@ public class ChatSettingsCase {
         lblListImage6.click();
         Thread.sleep(3000);
         driver.navigate().back();
-        Thread.sleep(6000);
+        Thread.sleep(3000);
+
+        //Check incognito keyboard toggle is ON inside privacy screen
+        MobileElement PrivacyTextView = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout[2]/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[4]/android.widget.LinearLayout/android.widget.TextView");
+        PrivacyTextView.click();
+        Thread.sleep(3000);
+        driver.navigate().back();
+        Thread.sleep(3000);
+        MobileElement conversationViewDisplayNameTextView3 = (MobileElement) driver.findElementById(ConversationViewDisplayNameTextView);
+        conversationViewDisplayNameTextView3.click();
+        Thread.sleep(3000);
+        MobileElement inputBarEditText5 = (MobileElement) driver.findElementById(InputBarEditText);
+        inputBarEditText5.click();
+        Thread.sleep(5000);
+        driver.navigate().back();
+        Thread.sleep(3000);
+        driver.navigate().back();
+        Thread.sleep(3000);
+
+        //Check incognito keyboard toggle is OFF inside privacy screen
+        MobileElement singleModeImageView2 = (MobileElement) driver.findElementById(SingleModeImageView);
+        singleModeImageView2.click();
+        Thread.sleep(3000);
+        MobileElement PrivacyTextView2 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout[2]/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[4]/android.widget.LinearLayout/android.widget.TextView");
+        PrivacyTextView2.click();
+        Thread.sleep(3000);
+        MobileElement IncognitoKeyboardCheckboxOFF = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.Switch");
+        IncognitoKeyboardCheckboxOFF.click();
+        Thread.sleep(3000);
+        driver.navigate().back();
+        Thread.sleep(3000);
+        MobileElement conversationViewDisplayNameTextView4 = (MobileElement) driver.findElementById(ConversationViewDisplayNameTextView);
+        conversationViewDisplayNameTextView4.click();
+        Thread.sleep(3000);
+        MobileElement inputBarEditText6 = (MobileElement) driver.findElementById(InputBarEditText);
+        inputBarEditText6.click();
+        Thread.sleep(5000);
+        driver.navigate().back();
+        Thread.sleep(3000);
+        driver.navigate().back();
+        Thread.sleep(3000);
+
+        //Check App permissions option on the settings
+        MobileElement singleModeImageView3 = (MobileElement) driver.findElementById(SingleModeImageView);
+        singleModeImageView3.click();
+        Thread.sleep(3000);
+        MobileElement AppPermissionTextView = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout[2]/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[5]/android.widget.LinearLayout/android.widget.TextView");
+        AppPermissionTextView.click();
+        Thread.sleep(5000);
+        driver.navigate().back();
+        Thread.sleep(3000);
+
+        ////Check help option on the settings
+       /* MobileElement singleModeImageView4 = (MobileElement) driver.findElementById(SingleModeImageView);
+        singleModeImageView4.click();
+        Thread.sleep(3000);
+        MobileElement HelpTextView = driver.findElementByName("Help");
+        HelpTextView.click();*/
 
         //Check clear data option on my settings
-        MobileElement ClearDataTextView = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.view.ViewGroup/android.widget.ExpandableListView/android.widget.LinearLayout[16]/android.widget.ImageView");
+        MobileElement ClearDataTextView = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView[3]");
         ClearDataTextView.click();
         Thread.sleep(3000);
         MobileElement clearAllDataButton = (MobileElement) driver.findElementById("io.beldex.bchat:id/clearAllDataButton");
         clearAllDataButton.click();
+        Thread.sleep(3000);
+        MobileElement ClearAllDataOkButton = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.Button[2]");
+        ClearAllDataOkButton.click();
+        Thread.sleep(3000);
     }
 }
