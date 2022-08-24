@@ -115,15 +115,15 @@ public class ChatSettingsCase {
         driver.navigate().back();
         Thread.sleep(20000);*/
 
-       /* MobileElement singleModeImageView = (MobileElement) driver.findElementById(SingleModeImageView);
+        /* MobileElement singleModeImageView = (MobileElement) driver.findElementById(SingleModeImageView);
         singleModeImageView.click();
         Thread.sleep(3000);*/
-       /* MobileElement myAccountTextView = (MobileElement) driver.findElementByXPath(MyAccountTextView);
+        /* MobileElement myAccountTextView = (MobileElement) driver.findElementByXPath(MyAccountTextView);
         myAccountTextView.click();
         Thread.sleep(6000);*/
 
         //Check Enter key sends toggle switch is OFF inside chat settings on my account settings
-       /* MobileElement chatsButton = (MobileElement) driver.findElementById(ChatsButton);
+        /* MobileElement chatsButton = (MobileElement) driver.findElementById(ChatsButton);
         chatsButton.click();
         Thread.sleep(3000);
         driver.navigate().back();
@@ -311,8 +311,8 @@ public class ChatSettingsCase {
         driver.navigate().back();
         Thread.sleep(3000);
 
-        ////Check help option on the settings
-       /* MobileElement singleModeImageView4 = (MobileElement) driver.findElementById(SingleModeImageView);
+        //Check help option on the settings
+        /* MobileElement singleModeImageView4 = (MobileElement) driver.findElementById(SingleModeImageView);
         singleModeImageView4.click();
         Thread.sleep(3000);
         MobileElement HelpTextView = driver.findElementByName("Help");
